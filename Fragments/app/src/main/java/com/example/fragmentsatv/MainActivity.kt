@@ -12,25 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(Fragment1())
 
-        binding.btnFragment1.setOnClickListener {
-            replaceFragment(Fragment1())
-        }
+        binding.buttomNav.setOnSelectedLister { item ->
+            when (item.itenId) {
+                R.id.id_home -> replaceFragment(Fragment1())
+                R.id.id_user -> replaceFragment(Fragment2())
+                R.id.id_product -> replaceFragment(Fragment3())
+            }
 
-        binding.btnFragment2.setOnClickListener {
-            replaceFragment(Fragment2())
-        }
-
-        binding.btnFragment3.setOnClickListener {
-            replaceFragment(Fragment3())
-        }
+        }true
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
-        fragmentTransaction.commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
 }

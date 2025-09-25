@@ -13,8 +13,6 @@ class Fragment3 : Fragment() {
         fun newInstance() = Fragment3()
     }
 
-    private val viewModel: Fragment3ViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
