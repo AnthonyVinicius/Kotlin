@@ -12,26 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(Fragment1())
 
-        binding.buttomNav.setOnSelectedLister { item ->
-            when (item.itenId) {
-                R.id.id_home -> replaceFragment(Fragment1())
-                R.id.id_user -> replaceFragment(Fragment2())
-                R.id.id_product -> replaceFragment(Fragment3())
+        replaceFragment(HomeFragment())
+
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.user -> replaceFragment(UserFragment())
+                R.id.product -> replaceFragment(ProductFragment())
             }
-
-        }true
+            true
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
+            .replace(R.id.fragmentContainerView, fragment)
             .commit()
     }
-
 }
-
-
-
-
