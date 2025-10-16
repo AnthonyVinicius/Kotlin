@@ -21,6 +21,9 @@ class TaskAdapter(
 
         fun bind(task: Task) {
             tvTitle.text = task.title
+
+            checkBox.setOnCheckedChangeListener(null)
+
             checkBox.isChecked = task.isCompleted
 
             checkBox.setOnCheckedChangeListener { _, _ ->
@@ -31,6 +34,7 @@ class TaskAdapter(
                 onDeleteClicked(task)
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
