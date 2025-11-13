@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnSimularCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simular cálculo demorado" />
+
+    <Button
+        android:id="@+id/btnGerarNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gerar número aleatório"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado aparece aqui"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>
